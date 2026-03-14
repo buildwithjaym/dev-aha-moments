@@ -1,0 +1,28 @@
+for %f in (C:\backup\*.sql) do mysql -u root -e "CREATE DATABASE IF NOT EXISTS `%~nf`;" && mysql -u root %~nf < "%f"
+
+
+-----
+
+What This Command Does
+
+For every .sql file:
+
+Example:
+
+C:\backup\basc_quiz.sql
+
+It will automatically run:
+
+CREATE DATABASE basc_quiz;
+
+Then import:
+
+mysql -u root basc_quiz < basc_quiz.sql
+
+So the workflow becomes:
+
+SQL File CREATE DATABASE basc_quiz;
+
+**ALL AUTOMATIC**
+
+
